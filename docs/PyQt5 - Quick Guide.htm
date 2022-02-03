@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.mui-textfield.mui-textfield--float-label > label {-webkit-transition:all .15s ease-out;-moz-transition:all .15s ease-out;-o-transition:all .15s ease-out;transition:all .15s ease-out;}</style><style type="text/css">@keyframes mui-btn-inserted{from{transform:none;}to{transform:none;}}.mui-btn{animation-duration:0.0001s;animation-name:mui-btn-inserted;}@keyframes mui-dropdown-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-dropdown-inserted;}@keyframes mui-btn-inserted,mui-dropdown-inserted{from{transform:none;}to{transform:none;}}.mui-btn[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-btn-inserted,mui-dropdown-inserted;}@keyframes mui-tab-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="tab"]{animation-duration:0.0001s;animation-name:mui-tab-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > input{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > textarea{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-select-inserted{from{transform:none;}to{transform:none;}}.mui-select > select{animation-duration:0.0001s;animation-name:mui-select-inserted;}@keyframes mui-node-inserted{from{transform:none;}to{transform:none;}}.mui-select > select ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-inserted;}@keyframes mui-node-disabled{from{transform:none;}to{transform:none;}}.mui-select > select:disabled ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-disabled;}</style>
+<title>PyQt5 - Quick Guide</title>
+<meta charset="utf-8">
+<meta name="description" content="PyQt5 - Quick Guide,  PyQt is a GUI widgets toolkit. It is a Python interface for Qt, one of the most powerful, and popular cross-platform GUI library. PyQt was developed by RiverBan">
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code">
+<link rel="canonical" href="https://www.tutorialspoint.com/pyqt5/pyqt5_quick_guide.htm">
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="PyQt5%20-%20Quick%20Guide_fichiers/style-min-v1.css">
+<script src="PyQt5%20-%20Quick%20Guide_fichiers/prism-core.js"></script>
+<script src="PyQt5%20-%20Quick%20Guide_fichiers/prism-autoloader.js"></script>
+<script src="PyQt5%20-%20Quick%20Guide_fichiers/script-min-v1.js"></script><link rel="stylesheet" type="text/css" href="PyQt5%20-%20Quick%20Guide_fichiers/prettify.css">
+<script>
+function printPage() { window.print(); }
+function readCookie(name) {
+     var nameEQ = name + "=";
+     var ca = document.cookie.split(';');
+     for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+     }
+     return null;
+}
+</script>
+<script id="adp1" data-cfasync="false">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="PyQt5%20-%20Quick%20Guide_fichiers/adpushup.js" type="text/javascript" async=""></script>
+<script id="adp2" data-cfasync="false">(function(w, d) {var cval = readCookie('subscription_purchased');if(cval == '1'){ return; } var s = d.createElement('script'); s.src = '//delivery.adrecover.com/18107/adRecover.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="PyQt5%20-%20Quick%20Guide_fichiers/adRecover.js" type="text/javascript" async=""></script>
+<style>
+.butnn-save a{color:#fff;} .notes_msg{color:green; margin-left:20px; margin-top:15px;}
+.right-menu .mui-btn {
+    background-color:#529b0c;
+}
+a.demo {
+    background:#529b0c;
+}
+li.heading {
+    background:#529b0c;
+}
+.course-box{background:#529b0c}
+.home-intro-sub p{color:#529b0c}
+a.demo{
+   top: 12px;
+   float:right;
+}
+.prettyprint{
+   width: 99%;
+}
+.site-message img {
+   width:100%;
+}
+@media (max-width:544px){
+   .site-message img {
+       width: 200%;
+       position: relative;
+       left: -50%;
+   }
+}
+</style>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<header id="header" class="">
+<div class="site-message">
+  <a href="https://www.tutorialspoint.com/latest/prime-packs">
+  <img src="PyQt5%20-%20Quick%20Guide_fichiers/top-banner.jpg" alt="Video Courses Sale">
+  </a>
+</div>
+<!-- pop-up -->
+<!-- pop-up -->
+<div class="pop-modal overlay-pop popdiv" style="display: none;">
+<div class="modal-window small">
+<span class="close" title="close">×</span>
+<div class="pop-content">
+</div>
+<span class="msg"></span>
+</div>
+</div>
+<div class="wrap_loader">
+<div class="imgLoader"></div>
+</div>
+<input type="hidden" id="vu" name="vu" value="">
+<!-- pop-up -->
+
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item articles">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com/" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/market/login.asp?v=4.00" target="_blank" title="Login TutorialsPoint"><i class="fal fa-sign-in-alt"></i> <span>Login</span></a> 
+</div>      
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="PyQt5%20-%20Quick%20Guide_fichiers/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="https://www.tutorialspoint.com/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="https://www.tutorialspoint.com/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="https://www.tutorialspoint.com/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="https://www.tutorialspoint.com/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="https://www.tutorialspoint.com/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="https://www.tutorialspoint.com/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="https://www.tutorialspoint.com/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="https://www.tutorialspoint.com/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="https://www.tutorialspoint.com/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="https://www.tutorialspoint.com/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="https://www.tutorialspoint.com/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="https://www.tutorialspoint.com/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="https://www.tutorialspoint.com/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="https://www.tutorialspoint.com/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="https://www.tutorialspoint.com/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="https://www.tutorialspoint.com/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="https://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/index.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box-wrap">
+	<div class="search-box" style="">
+		<div>
+			<input class="input" type="text" id="search-strings" name="key" placeholder="Search latest courses, ebooks and prime packs..." autocomplete="off">
+			<button id="btnSearch"><i class="fa fa-search" title="Search"></i></button>
+		</div>
+	</div>		
+	<div class="search-box" id="search-results" style="display: none;"></div>
+	<div class="clear"></div>
+	<script>
+		$('#search-strings').keyup(function () {
+			var keyword = $('#search-strings').val();
+			if (keyword != "" && keyword.length > 2) {
+				$.ajax({
+					url:"https://search.tutorialspoint.com/market_urls_suggestion.php",
+					method: "POST",
+               type: 'POST',
+					dataType: "json",
+               cache:false,
+					data: {
+						'keyword': keyword
+					},
+					error: function (err) {
+						console.log ( err );
+					},
+					success: function (data) {
+						if (data.length > 0) {
+					//var str = '<div class="search_title arrow_search">Search Results</div><ul>';
+					var str = '<div class="search-overlay"><ul>';
+					data.forEach((item) => {
+					   var iconStr = '<i class="fa fa-play-circle"></i>';
+					   if(item.type=='E'){
+						  iconStr = '<i class="fa fa-file-pdf"></i>';
+					   }
+					   if(item.type=='B'){
+						  iconStr = '<i class="fa fa-cubes"></i>';
+					   }
+					   if(item.type=='A' || item.type=='I' || item.type=='P'){ // profile/author/instructor
+						  iconStr = '<i class="fa fa-user"></i>';
+					   }
+					   str = str + '<a href="'+item.url+'" target="_blank"><li class="clsHeadQuestion">'+iconStr+' '+item.name+'</li></a>'; 
+					});
+					str = str + '</ul><br/></div><div class="clear"></div>';
+							$('#search-results').show();
+							$('#search-results').html(str);
+						} else {
+							$('#search-results').hide();
+							$('#search-results').html('');
+						}
+					}
+				});
+			}else{
+				$('#search-results').hide();
+				$('#search-results').html('');
+			}
+		});
+	 $('#btnSearch').click(function(){
+		   var keyword = $('#search-strings').val();
+		   window.location.href = "https://www.tutorialspoint.com/search/"+keyword;
+	 });
+	 $(document).mouseup(function(e) 
+	 {
+		 var container = $('#search-results');            
+		 if (!container.is(e.target) && container.has(e.target).length === 0) 
+		 {
+			 container.hide();
+		 }
+	 });
+	</script>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-books"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://www.tutorialspoint.com/latest/ebooks"><i class="fa fa-book-reader"></i> <span>eBooks</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/latest/courses"><i class="fa fa-video"></i> <span>Courses</span></a> 
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+"HTML-CSS": {
+linebreaks: { automatic: true, width: "container" }          
+}              
+});
+</script>
+<script src="PyQt5%20-%20Quick%20Guide_fichiers/MathJax.js" id=""></script>
+<div class="mini-logo">
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/pyqt5-mini-logo.jpg" alt="PyQt5 Tutorial">
+</div>
+<ul class="toc chapters">
+<li class="heading">PyQt5 Tutorial</li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/index.htm">PyQt5 - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_introduction.htm">PyQt5 - Introduction</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_whats_new.htm">PyQt5 - What’s New</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_hello_world.htm">PyQt5 - Hello World</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_major_classes.htm">PyQt5 - Major Classes</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_using_qt_designer.htm">PyQt5 - Using Qt Designer</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_signals_and_slots.htm">PyQt5 - Signals &amp; Slots</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_layout_management.htm">PyQt5 - Layout Management</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_basic_widgets.htm">PyQt5 - Basic Widgets</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qdialog_class.htm">PyQt5 - QDialog Class</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qmessagebox.htm">PyQt5 - QMessageBox</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_multiple_document_interface.htm">PyQt5 - Multiple Document Interface</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_drag_and_drop.htm">PyQt5 - Drag &amp; Drop</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_database_handling.htm">PyQt5 - Database Handling</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_drawing_api.htm">PyQt5 - Drawing API</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_brushstyle_constants.htm">PyQt5 - BrushStyle Constants</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qclipboard.htm">PyQt5 - QClipboard</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qpixmap_class.htm">PyQt5 - QPixmap Class</a></li>
+<li class="heading">PyQt5 Useful Resources</li>
+<li style="background-color: rgb(214, 214, 214);"><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_quick_guide.htm">PyQt5 - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_useful_resources.htm">PyQt5 - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_discussion.htm">PyQt5 - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div id="stickyparent" style="position: sticky;">
+<div style="height: 250px; width: 300px; top: 1491px;" id="sticky-ad">
+<div id="430c9911-782f-495d-88f9-69f58ca8c9a4" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("430c9911-782f-495d-88f9-69f58ca8c9a4");
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>PyQt5 - Quick Guide</h1>
+<hr>
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"><div id="8014640d-fd34-4b2e-9b1b-cc67234a2325" class="_ap_apex_ad"></div></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qpixmap_class.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/pyqt5/pyqt5_useful_resources.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clear"></div>
+<h1>PyQt5 - Introduction</h1>
+<p>PyQt is a GUI widgets toolkit. It is a Python interface for <b>Qt</b>,
+ one of the most powerful, and popular cross-platform GUI library. PyQt 
+was developed by RiverBank Computing Ltd. The latest version of PyQt can
+ be downloaded from its official website − <a target="_blank" rel="nofollow" href="https://www.riverbankcomputing.com/">riverbankcomputing.com</a></p>
+<p>PyQt API is a set of modules containing a large number of classes and functions. While <b>QtCore</b> module contains non-GUI functionality for working with file and directory etc., <b>QtGui</b> module contains all the graphical controls. In addition, there are modules for working with XML <b>(QtXml)</b>, SVG <b>(QtSvg)</b>, and SQL <b>(QtSql)</b>, etc.</p>
+<p>A list of frequently used modules is given below −</p>
+<ul class="list">
+<li><p><b>QtCore</b> − Core non-GUI classes used by other modules</p></li>
+<li><p><b>QtGui</b> − Graphical user interface components</p></li>
+<li><p><b>QtMultimedia</b> − Classes for low-level multimedia programming</p></li>
+<li><p><b>QtNetwork</b> − Classes for network programming</p></li>
+<li><p><b>QtOpenGL</b> − OpenGL support classes</p></li>
+<li><p><b>QtScript</b> − Classes for evaluating Qt Scripts</p></li>
+<li><p><b>QtSql</b> − Classes for database integration using SQL</p></li>
+<li><p><b>QtSvg</b> − Classes for displaying the contents of SVG files</p></li>
+<li><p><b>QtWebKit</b> − Classes for rendering and editing HTML</p></li>
+<li><p><b>QtXml</b> − Classes for handling XML</p></li>
+<li><p><b>QtWidgets</b> − Classes for creating classic desktop-style UIs</p></li>
+<li><p><b>QtDesigner</b> − Classes for extending Qt Designer</p></li>
+</ul>
+<h2>Supporting Environments</h2>
+<p>PyQt is compatible with all the popular operating systems including 
+Windows, Linux, and Mac OS. It is dual licensed, available under GPL as 
+well as commercial license. The latest stable version is <b>PyQt5-5.13.2.</b></p>
+<h3>Windows</h3>
+<p>Wheels for 32-bit or 64-bit architecture are provided that are 
+compatible with Python version 3.5 or later. The recommended way to 
+install is using <b>PIP</b> utility −</p>
+<pre class="result notranslate">pip3 install PyQt5
+</pre>
+<p>To install development tools such as Qt Designer to support PyQt5 wheels, following is the command −</p>
+<pre class="result notranslate">pip3 install pyqt5-tools
+</pre>
+<p>You can also build PyQt5 on Linux/macOS from the source code <a target="_blank" rel="nofollow" href="https://www.riverbankcomputing.com/">www.riverbankcomputing.com/static/Downloads/PyQt5</a></p>
+<h1>PyQt5 - What’s New</h1>
+<p>PyQt5 API is not automatically compatible with earlier versions. 
+Hence, Python code involving PyQt4 modules should be upgraded manually 
+by making relevant changes. In this chapter, main differences between 
+PyQt4 and PyQt5 have been listed.</p>
+<p>PyQt5 is not supported on versions of Python earlier than v2.6.</p>
+<p>PyQt5 doesn't support connect() method of QObject class for 
+connection between signal and slot. Hence the usage can no more be 
+implemented −</p>
+<pre class="result notranslate">QObject.connect(widget, QtCore.SIGNAL(‘signalname’), slot_function)
+</pre>
+<p>Only the following syntax is defined −</p>
+<pre class="result notranslate">widget.signal.connect(slot_function)
+</pre>
+<p>Classes defined in earlier QtGui module have been distributed in <b>QtGui, QtPrintSupport</b> an <b>QtWidgets</b> modules.</p>
+<p>In the new QFileDialog class, The <b>getOpenFileNameAndFilter()</b> method is replaced by <b>getOpenFileName(), getOpenFileNamesAndFilter()</b> by <b>getOpenFileNames()</b> and <b>getSaveFileNameAndFilter()</b> by <b>getSaveFileName()</b>. Older signatures of these methods also have changed.</p>
+<p>PyQt5 doesn’t have provision to define a class that is sub-classed from more than one Qt class.</p>
+<p><b>pyuic5</b> utility (to generates Python code from Designer's XML file) does not support the --pyqt3-wrapper flag.</p>
+<p><b>pyrcc5</b> does not support the -py2 and -py3 flags. The output of pyrcc5 is compatible with all versions of Python v2.6 onwards.</p>
+<p>PyQt5 always invokes <b>sip.setdestroyonexit()</b> automatically and calls the C++ destructor of all wrapped instances that it owns.</p>
+<h1>PyQt5 - Hello World</h1>
+<p>Creating a simple GUI application using PyQt involves the following steps −</p>
+<ul class="list">
+<li><p>Import QtCore, QtGui and QtWidgets modules from PyQt5 package.</p></li>
+<li><p>Create an application object of QApplication class.</p></li>
+<li><p>A QWidget object creates top level window. Add QLabel object in it.</p></li>
+<li><p>Set the caption of label as "hello world".</p></li>
+<li><p>Define the size and position of window by setGeometry() method.</p></li>
+<li><p>Enter the mainloop of application by <b>app.exec_()</b> method.</p></li>
+</ul>
+<p>Following is the code to execute Hello World program in PyQt −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   w </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QWidget</span><span class="pun">()</span><span class="pln">
+   b </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QLabel</span><span class="pun">(</span><span class="pln">w</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Hello World!"</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">setGeometry</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="lit">200</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">20</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"PyQt5"</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/hello_world.jpg" alt="Hello World">
+<p>It is also possible to develop an object oriented solution of the above code.</p>
+<ul class="list">
+<li><p>Import QtCore, QtGui and QtWidgets modules from PyQt5 package.</p></li>
+<li><p>Create an application object of QApplication class.</p></li>
+<li><p>Declare window class based on QWidget class</p></li>
+<li><p>Add a QLabel object and set the caption of label as "hello world".</p></li>
+<li><p>Define the size and position of window by setGeometry() method.</p></li>
+<li><p>Enter the mainloop of application by <b>app.exec_()</b> method.</p></li>
+</ul>
+<p>Following is the complete code of the object oriented solution −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> window</span><span class="pun">(</span><span class="typ">QWidget</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> parent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="pln">window</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">(</span><span class="pln">parent</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">resize</span><span class="pun">(</span><span class="lit">200</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"PyQt5"</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">label </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QLabel</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">label</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Hello World"</span><span class="pun">)</span><span class="pln">
+      font </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QFont</span><span class="pun">()</span><span class="pln">
+      font</span><span class="pun">.</span><span class="pln">setFamily</span><span class="pun">(</span><span class="str">"Arial"</span><span class="pun">)</span><span class="pln">
+      font</span><span class="pun">.</span><span class="pln">setPointSize</span><span class="pun">(</span><span class="lit">16</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">label</span><span class="pun">.</span><span class="pln">setFont</span><span class="pun">(</span><span class="pln">font</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">label</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">20</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> main</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   ex </span><span class="pun">=</span><span class="pln"> window</span><span class="pun">()</span><span class="pln">
+   ex</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   main</span><span class="pun">()</span></pre>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/hello_worlds.jpg" alt="Hello Worlds">
+<h1>PyQt5 - Major Classes</h1>
+<p><b>PyQt API</b> is a large collection of classes and methods. These classes are defined in more than 20 modules.</p> 
+<p>Following are some of the frequently used modules −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%;">Sr.No.</th>
+<th style="text-align:center;">Modules &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>QtCore</b></p>
+<p>Core non-GUI classes used by other modules</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>QtGui</b></p>
+<p>Graphical user interface components</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>QtMultimedia</b></p>
+<p>Classes for low-level multimedia programming</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>QtNetwork</b></p>
+<p>Classes for network programming</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>QtOpenGL</b></p>
+<p>OpenGL support classes</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>QtScript</b></p>
+<p>Classes for evaluating Qt Scripts</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>QtSql</b></p>
+<p>Classes for database integration using SQL</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>QtSvg</b></p>
+<p>Classes for displaying the contents of SVG files</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td>
+<p><b>QtWebKit</b></p>
+<p>Classes for rendering and editing HTML</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td>
+<p><b>QtXml</b></p>
+<p>Classes for handling XML</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td>
+<p><b>QtWidgets</b></p>
+<p>Classes for creating classic desktop-style UIs.</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td>
+<p><b>QtDesigner</b></p>
+<p>Classes for extending Qt Designer</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td>
+<p><b>QtAssistant</b></p>
+<p>Support for online help</p>
+</td>
+</tr>
+</tbody></table>
+<p>PyQt5 development tools is a collection of useful utilities for Qt development. Following is a select list of such utilities −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%;">Sr.No.</th>
+<th style="text-align:center;">Tool Name &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>assistant</b></p>
+<p>Qt Assistant documentation tool</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>pyqt5designer</b></p>
+<p>Qt Designer GUI layout tool</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>linguist</b></p>
+<p>Qt Linguist translation tool</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>lrelease</b></p>
+<p>compile ts files to qm files</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>pylupdate5</b></p>
+<p>extract translation strings and generate or update ts files</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>qmake</b></p>
+<p>Qt software build tool</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>pyqt5qmlscene</b></p>
+<p>QML file viewer</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>pyqmlviewer</b></p>
+<p>QML file viewer</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td>
+<p><b>pyrcc5</b></p>
+<p>Qt resource file compiler</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td>
+<p><b>pyuic5</b></p>
+<p>Qt User Interface Compiler for generating code from ui files</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td>
+<p><b>pyqmltestrunner</b></p>
+<p>running unit tests on QML code</p>
+</td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td>
+<p><b>qdbus</b></p>
+<p>command-line tool to list D-Bus services</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td>
+<p><b>QDoc</b></p>
+<p>documentation generator for software projects.</p></td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td>
+<p><b>Qhelpgenerator</b></p>
+<p>generating and viewing Qt help files.</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td>
+<p><b>qmlimportscanner</b></p>
+<p>parses and reports on QML imports</p></td>
+</tr>
+</tbody></table>
+<p>PyQt API contains more than 400 classes. The <b>QObject</b> class is at the top of class hierarchy. It is the base class of all Qt objects. Additionally, <b>QPaintDevice</b> class is the base class for all objects that can be painted.</p>
+<p><b>QApplication</b> class manages the main settings and control flow 
+of a GUI application. It contains main event loop inside which events 
+generated by window elements and other sources are processed and 
+dispatched. It also handles system-wide and application-wide settings.</p>
+<p><b>QWidget</b> class, derived from QObject and QPaintDevice classes is the base class for all user interface objects. <b>QDialog</b> and <b>QFrame</b> classes are also derived from QWidget class. They have their own sub-class system.</p>
+<p>Here is a select list of frequently used widgets</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Widgets &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>QLabel</b></p>
+<p>Used to display text or image</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>QLineEdit</b></p>
+<p>Allows the user to enter one line of text</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>QTextEdit</b></p>
+<p>Allows the user to enter multi-line text</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>QPushButton</b></p>
+<p>A command button to invoke action</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>QRadioButton</b></p>
+<p>Enables to choose one from multiple options</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>QCheckBox</b></p>
+<p>Enables choice of more than one options</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>QSpinBox</b></p>
+<p>Enables to increase/decrease an integer value</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>QScrollBar</b></p>
+<p>Enables to access contents of a widget beyond display aperture</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td>
+<p><b>QSlider</b></p>
+<p>Enables to change the bound value linearly.</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td>
+<p><b>QComboBox</b></p>
+<p>Provides a dropdown list of items to select from</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td>
+<p><b>QMenuBar</b></p>
+<p>Horizontal bar holding QMenu objects</p></td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td>
+<p><b>QStatusBar</b></p>
+<p>Usually at bottom of QMainWindow, provides status information.</p></td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td>
+<p><b>QToolBar</b></p>
+<p>Usually at top of QMainWindow or floating. Contains action buttons</p></td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td>
+<p><b>QListView</b></p>
+<p>Provides a selectable list of items in ListMode or IconMode</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td>
+<p><b>QPixmap</b></p>
+<p>Off-screen image representation for display on QLabel or QPushButton object</p></td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td>
+<p><b>QDialog</b></p>
+<p>Modal or modeless window which can return information to parent window</p></td>
+</tr>
+</tbody></table>
+<p>A typical GUI based application’s top level window is created by <b>QMainWindow</b>
+ widget object. Some widgets as listed above take their appointed place 
+in this main window, while others are placed in the central widget area 
+using various layout managers.</p>
+<p>The following diagram shows the QMainWindow framework −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/qmainwindow.jpg" alt="QMainWindow">
+<h1>PyQt5 - Using Qt Designer</h1>
+<p>The PyQt installer comes with a GUI builder tool called <b>Qt Designer</b>.
+ Using its simple drag and drop interface, a GUI interface can be 
+quickly built without having to write the code. It is however, not an 
+IDE such as Visual Studio. Hence, Qt Designer does not have the facility
+ to debug and build the application.</p>
+<p>Start Qt Designer application which is a part of development tools and installed in scripts folder of the virtual environment.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/virtual_environment.jpg" alt="Virtual Environment">
+<p>Start designing GUI interface by choosing File → New menu.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/new_menu.jpg" alt="New Menu">
+<p>You can then drag and drop required widgets from the widget box on 
+the left pane. You can also assign value to properties of widget laid on
+ the form.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/widget.jpg" alt="Widget">
+<p>The designed form is saved as demo.ui. This ui file contains XML 
+representation of widgets and their properties in the design. This 
+design is translated into Python equivalent by using pyuic5 command line
+ utility. This utility is a wrapper for uic module of Qt toolkit. The 
+usage of pyuic5 is as follows −</p>
+<pre class="result notranslate">pyuic5 -x demo.ui -o demo.py
+</pre>
+<p>In the above command, -x switch adds a small amount of additional 
+code to the generated Python script (from XML) so that it becomes a 
+self-executable standalone application.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">"__main__"</span><span class="pun">:</span><span class="pln">
+   </span><span class="kwd">import</span><span class="pln"> sys
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   </span><span class="typ">Dialog</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QDialog</span><span class="pun">()</span><span class="pln">
+   ui </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Ui_Dialog</span><span class="pun">()</span><span class="pln">
+   ui</span><span class="pun">.</span><span class="pln">setupUi</span><span class="pun">(</span><span class="typ">Dialog</span><span class="pun">)</span><span class="pln">
+   </span><span class="typ">Dialog</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span></pre>
+<p>The resultant python script is executed to show the following dialog box −</p>
+<pre class="result notranslate">python demo.py
+</pre>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/dialog_box.jpg" alt="Dialog Box">
+<p>The user can input data in input fields but clicking on Add button 
+will not generate any action as it is not associated with any function. 
+Reacting to user-generated response is called as <b>event handling</b>.</p>
+<h1>PyQt5 - Signals &amp; Slots</h1>
+<p>Unlike a console mode application, which is executed in a sequential 
+manner, a GUI based application is event driven. Functions or methods 
+are executed in response to user’s actions like clicking on a button, 
+selecting an item from a collection or a mouse click etc., called <b>events</b>.</p>
+<p>Widgets used to build the GUI interface act as the source of such 
+events. Each PyQt widget, which is derived from QObject class, is 
+designed to emit <b>‘signal’</b> in response to one or more events. The signal on its own does not perform any action. Instead, it is ‘connected’ to a <b>‘slot’</b>. The slot can be any <b>callable Python function</b>.</p>
+<h2>Using Qt Designer's Signal/Slot Editor</h2>
+<p>First design a simple form with a LineEdit control and a PushButton.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/slot_editor.jpg" alt="Slot Editor">
+<p>It is desired that if button is pressed, contents of text box should 
+be erased. The QLineEdit widget has a clear() method for this purpose. 
+Hence, the button’s <b>clicked</b> signal is to be connected to <b>clear()</b> method of the text box.</p>
+<p>To start with, choose Edit signals/slots from Edit menu (or press 
+F4). Then highlight the button with mouse and drag the cursor towards 
+the textbox</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/cursor.jpg" alt="Cursor">
+<p>As the mouse is released, a dialog showing signals of button and 
+methods of slot will be displayed. Select clicked signal and clear() 
+method</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/clear_method.jpg" alt="Clear Method">
+<p>The Signal/Slot Editor window at bottom right will show the result −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/editor_window.jpg" alt="Editor Window">
+<p>Save ui and Build and Python code from ui file as shown in the below code −</p>
+<pre class="result notranslate">pyuic5 -x signalslot.ui -o signalslot.py
+</pre>
+<p>Generated Python code will have the connection between signal and slot by the following statement −</p>
+<pre class="result notranslate">self.pushButton.clicked.connect(self.lineEdit.clear)
+</pre>
+<p>Run signalslot.py and enter some text in the LineEdit. The text will be cleared if the button is pressed.</p>
+<h2>Building Signal-slot Connection</h2>
+<p>Instead of using Designer, you can directly establish signal-slot connection by following syntax −</p>
+<pre class="result notranslate">widget.signal.connect(slot_function)
+</pre>
+<p>Suppose if a function is to be called when a button is clicked. Here,
+ the clicked signal is to be connected to a callable function. It can be
+ achieved in any of the following technique −</p>
+<pre class="result notranslate">button.clicked.connect(slot_function)
+</pre>
+<h3>Example</h3>
+<p>In the following example, two QPushButton objects (b1 and b2) are 
+added in QDialog window. We want to call functions b1_clicked() and 
+b2_clicked() on clicking b1 and b2 respectively.</p>
+<p>When b1 is clicked, the clicked() signal is connected to b1_clicked() function −</p>
+<pre class="result notranslate">b1.clicked.connect(b1_clicked())
+</pre>
+<p>When b2 is clicked, the clicked() signal is connected to b2_clicked() function.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   win </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QDialog</span><span class="pun">()</span><span class="pln">
+   b1 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="pln">win</span><span class="pun">)</span><span class="pln">
+   b1</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Button1"</span><span class="pun">)</span><span class="pln">
+   b1</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">20</span><span class="pun">)</span><span class="pln">
+   b1</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">b1_clicked</span><span class="pun">)</span><span class="pln">
+   
+   b2 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="pln">win</span><span class="pun">)</span><span class="pln">
+   b2</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Button2"</span><span class="pun">)</span><span class="pln">
+   b2</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+   b2</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">b2_clicked</span><span class="pun">)</span><span class="pln">
+   
+   win</span><span class="pun">.</span><span class="pln">setGeometry</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="lit">200</span><span class="pun">,</span><span class="lit">100</span><span class="pun">)</span><span class="pln">
+
+   win</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"PyQt5"</span><span class="pun">)</span><span class="pln">
+   win</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> b1_clicked</span><span class="pun">():</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="str">"Button 1 clicked"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> b2_clicked</span><span class="pun">():</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="str">"Button 2 clicked"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/pushbutton.jpg" alt="PushButton">
+<h3>Output</h3>
+<pre class="result notranslate">Button 1 clicked
+Button 2 clicked
+</pre>
+<h1>PyQt5 - Layout Management</h1>
+<p>A GUI widget can be placed inside the container window by specifying 
+its absolute coordinates measured in pixels. The coordinates are 
+relative to the dimensions of the window defined by setGeometry() 
+method.</p>
+<h2>setGeometry() syntax</h2>
+<pre class="result notranslate">QWidget.setGeometry(xpos, ypos, width, height)
+</pre>
+<p>In the following code snippet, the top level window of 300 by 200 
+pixels dimensions is displayed at position (10, 10) on the monitor.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt4</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   w </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QWidget</span><span class="pun">()</span><span class="pln">
+	
+   b </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QPushButton</span><span class="pun">(</span><span class="pln">w</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Hello World!"</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">20</span><span class="pun">)</span><span class="pln">
+	
+   w</span><span class="pun">.</span><span class="pln">setGeometry</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="lit">10</span><span class="pun">,</span><span class="lit">300</span><span class="pun">,</span><span class="lit">200</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(“</span><span class="typ">PyQt</span><span class="pun">”)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+	
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>A <b>PushButton</b> widget is added in the window and placed at a 
+position 50 pixels towards right and 20 pixels below the top left 
+position of the window.</p>
+<p>This Absolute Positioning, however, is not suitable because of following reasons −</p>
+<ul class="list">
+<li><p>The position of the widget does not change even if the window is resized.</p></li>
+<li><p>The appearance may not be uniform on different display devices with different resolutions.</p></li>
+<li><p>Modification in the layout is difficult as it may need redesigning the entire form.</p></li>
+</ul>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/original_resized_window.jpg" alt="Original and Resized Window">
+<p>PyQt API provides layout classes for more elegant management of 
+positioning of widgets inside the container. The advantages of Layout 
+managers over absolute positioning are −</p>
+<ul class="list">
+<li><p>Widgets inside the window are automatically resized.</p></li>
+<li><p>Ensures uniform appearance on display devices with different resolutions.</p></li>
+<li><p>Adding or removing widget dynamically is possible without having to redesign.</p></li>
+</ul>
+<p>Qt toolkit defines various layouts that can be used with Qt Designer utility.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/display_class.jpg" alt="Display Class">
+<p>Here is the list of Classes which we will discuss one by one in this chapter.</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%">Sr.No.</th>
+<th style="text-align:center;">Classes &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qboxlayout_class.htm">QBoxLayout</a>
+<p>QBoxLayout class lines up the widgets vertically or horizontally. Its
+ derived classes are QVBoxLayout (for arranging widgets vertically) and 
+QHBoxLayout (for arranging widgets horizontally).</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qgridlayout_class.htm">QGridLayout</a>
+<p>A GridLayout class object presents with a grid of cells arranged in 
+rows and columns. The class contains addWidget() method. Any widget can 
+be added by specifying the number of rows and columns of the cell.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qformlayout_class.htm">QFormLayout</a>
+<p>QFormLayout is a convenient way to create two column form, where each
+ row consists of an input field associated with a label. As a 
+convention, the left column contains the label and the right column 
+contains an input field.</p></td>
+</tr>
+</tbody></table>
+<h1>PyQt5 - Basic Widgets</h1>
+<p>Here is the list of Widgets which we will discuss one by one in this chapter.</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No</th>
+<th style="text-align:center;">Widgets &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qlabel_widget.htm">QLabel</a>
+<p>A QLabel object acts as a placeholder to display non-editable text or
+ image, or a movie of animated GIF. It can also be used as a mnemonic 
+key for other widgets.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qlineedit_widget.htm">QLineEdit</a>
+<p>QLineEdit object is the most commonly used input field. It provides a
+ box in which one line of text can be entered. In order to enter 
+multi-line text, QTextEdit object is required.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qpushbutton_widget.htm">QPushButton</a>
+<p>In PyQt API, the QPushButton class object presents a button which when clicked can be programmed to invoke a certain function.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qradiobutton_widget.htm">QRadioButton</a>
+<p>A QRadioButton class object presents a selectable button with a text 
+label. The user can select one of many options presented on the form. 
+This class is derived from QAbstractButton class.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qcheckbox_widget.htm">QCheckBox</a>
+<p>A rectangular box before the text label appears when a QCheckBox 
+object is added to the parent window. Just as QRadioButton, it is also a
+ selectable button.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qcombobox_widget.htm">QComboBox</a>
+<p>A QComboBox object presents a dropdown list of items to select from. 
+It takes minimum screen space on the form required to display only the 
+currently selected item.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qspinbox_widget.htm">QSpinBox</a>
+<p>A QSpinBox object presents the user with a textbox which displays an integer with up/down button on its right.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qslider_widget_signal.htm">QSlider Widget &amp; Signal</a>
+<p>QSlider class object presents the user with a groove over which a 
+handle can be moved. It is a classic widget to control a bounded value.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qmenubar_qmenu_qaction_widgets.htm">QMenuBar, QMenu &amp; QAction</a>
+<p>A horizontal QMenuBar just below the title bar of a QMainWindow object is reserved for displaying QMenu objects.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qtoolbar_widget.htm">QToolBar</a>
+<p>A QToolBar widget is a movable panel consisting of text buttons, buttons with icons or other widgets.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qinputdialog_widget.htm">QInputDialog</a>
+<p>This is a preconfigured dialog with a text field and two buttons, OK 
+and Cancel. The parent window collects the input in the text box after 
+the user clicks on Ok button or presses Enter.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">12</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qfontdialog_widget.htm">QFontDialog</a>
+<p>Another commonly used dialog, a font selector widget is the visual 
+appearance of QDialog class. Result of this dialog is a Qfont object, 
+which can be consumed by the parent window.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">13</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qfiledialog_widget.htm">QFileDialog</a>
+<p>This widget is a file selector dialog. It enables the user to 
+navigate through the file system and select a file to open or save. The 
+dialog is invoked either through static functions or by calling exec_() 
+function on the dialog object.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">14</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qtabwidget.htm">QTab</a>
+<p>If a form has too many fields to be displayed simultaneously, they 
+can be arranged in different pages placed under each tab of a Tabbed 
+Widget. The QTabWidget provides a tab bar and a page area.</p></td>
+</tr>
+<tr>
+<td class="ts">15</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qstackedwidget.htm">QStacked</a>
+<p>Functioning of QStackedWidget is similar to QTabWidget. It also helps in the efficient use of window’s client area.</p></td>
+</tr>
+<tr>
+<td class="ts">16</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qsplitter_widget.htm">QSplitter</a>
+<p>This is another advanced layout manager which allows the size of 
+child widgets to be changed dynamically by dragging the boundaries 
+between them. The Splitter control provides a handle that can be dragged
+ to resize the controls.</p></td>
+</tr>
+<tr>
+<td class="ts">17</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qdockwidget.htm">QDock</a>
+<p>A dockable window is a subwindow that can remain in floating state or
+ can be attached to the main window at a specified position. Main window
+ object of QMainWindow class has an area reserved for dockable windows.</p></td>
+</tr>
+<tr>
+<td class="ts">18</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qstatusbar_widget.htm">QStatusBar</a>
+<p>QMainWindow object reserves a horizontal bar at the bottom as the 
+status bar. It is used to display either permanent or contextual status 
+information.</p></td>
+</tr>
+<tr>
+<td class="ts">19</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qlistwidget.htm">QList</a>
+<p>QListWidget class is an item-based interface to add or remove items 
+from a list. Each item in the list is a QListWidgetItem object. 
+ListWidget can be set to be multiselectable.</p></td>
+</tr>
+<tr>
+<td class="ts">20</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qscrollbar_widget.htm">QScrollBar</a>
+<p>A scrollbar control enables the user to access parts of the document 
+that is outside the viewable area. It provides visual indicator to the 
+current position.</p></td>
+</tr>
+<tr>
+<td class="ts">21</td>
+<td><a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qcalender_widget.htm">QCalendar</a>
+<p>QCalendar widget is a useful date picker control. It provides a 
+month-based view. The user can select the date by the use of the mouse 
+or the keyboard, the default being today’s date.</p></td>
+</tr>
+</tbody></table>
+<h1>PyQt5 - QDialog Class</h1>
+<p>A <b>QDialog</b> widget presents a top level window mostly used to collect response from the user. It can be configured to be <b>Modal</b> (where it blocks its parent window) or <b>Modeless</b> (the dialog window can be bypassed).</p>
+<p>PyQt API has a number of preconfigured Dialog widgets such as InputDialog, FileDialog, FontDialog, etc.</p>
+<h2>Example</h2>
+<p>In the following example, <b>WindowModality</b> attribute of Dialog 
+window decides whether it is modal or modeless. Any one button on the 
+dialog can be set to be default. The dialog is discarded by <b>QDialog.reject()</b> method when the user presses the Escape key.</p>
+<p>A PushButton on a top level QWidget window, when clicked, produces a 
+Dialog window. A Dialog box doesn’t have minimize and maximize controls 
+on its title bar.</p>
+<p>The user cannot relegate this dialog box in the background because its WindowModality is set to <b>ApplicationModal</b>.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   w </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QWidget</span><span class="pun">()</span><span class="pln">
+   btn </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="pln">w</span><span class="pun">)</span><span class="pln">
+   btn</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Hello World!"</span><span class="pun">)</span><span class="pln">
+   btn</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+   btn</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">showdialog</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"PyQt Dialog demo"</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> showdialog</span><span class="pun">():</span><span class="pln">
+   dlg </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QDialog</span><span class="pun">()</span><span class="pln">
+   b1 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="str">"ok"</span><span class="pun">,</span><span class="pln">dlg</span><span class="pun">)</span><span class="pln">
+   b1</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">50</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+   dlg</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"Dialog"</span><span class="pun">)</span><span class="pln"> </span><span class="lit">9.</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pln"> </span><span class="pun">—</span><span class="pln"> </span><span class="typ">QDialog</span><span class="pln"> </span><span class="typ">Class</span><span class="pln">
+   dlg</span><span class="pun">.</span><span class="pln">setWindowModality</span><span class="pun">(</span><span class="typ">Qt</span><span class="pun">.</span><span class="typ">ApplicationModal</span><span class="pun">)</span><span class="pln">
+   dlg</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>The above code produces the following output. Click on button in main window and dialog box pops up −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/qdialog_class_output.jpg" alt="QDialog Class Output">
+<h1>PyQt5 - QMessageBox</h1>
+<p><b>QMessageBox</b> is a commonly used modal dialog to display some 
+informational message and optionally ask the user to respond by clicking
+ any one of the standard buttons on it. Each standard button has a 
+predefined caption, a role and returns a predefined hexadecimal number.</p>
+<p>Important methods and enumerations associated with QMessageBox class are given in the following table −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>setIcon()</b></p>
+<p>Displays predefined icon corresponding to severity of the message</p>
+<ul class="list">
+<li>Question</li>
+<li>Information</li>
+<li>Warning</li>
+<li>Critical</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>setText()</b></p>
+<p>Sets the text of the main message to be displayed</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>setInformativeText()</b></p>
+<p>Displays additional information</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>setDetailText()</b></p>
+<p>Dialog shows a Details button. This text appears on clicking it</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>setTitle()</b></p>
+<p>Displays the custom title of dialog</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>setStandardButtons()</b></p>
+<p>List of standard buttons to be displayed. Each button is associated with</p>
+<p>QMessageBox.Ok 0x00000400</p>
+<p>QMessageBox.Open 0x00002000</p>
+<p>QMessageBox.Save 0x00000800</p>
+<p>QMessageBox.Cancel 0x00400000</p>
+<p>QMessageBox.Close 0x00200000</p>
+<p>QMessageBox.Yes 0x00004000</p>
+<p>QMessageBox.No 0x00010000</p>
+<p>QMessageBox.Abort 0x00040000</p>
+<p>QMessageBox.Retry 0x00080000</p>
+<p>QMessageBox.Ignore 0x00100000</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>setDefaultButton()</b></p>
+<p>Sets the button as default. It emits the clicked signal if Enter is pressed</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>setEscapeButton()</b></p>
+<p>Sets the button to be treated as clicked if the escape key is pressed</p></td>
+</tr>
+</tbody></table>
+<h2>Example</h2>
+<p>In the following example, click signal of the button on the top level
+ window, the connected function displays the messagebox dialog.</p>
+<pre class="result notranslate">msg = QMessageBox()
+msg.setIcon(QMessageBox.Information)
+msg.setText("This is a message box")
+msg.setInformativeText("This is additional information")
+msg.setWindowTitle("MessageBox demo")
+msg.setDetailedText("The details are as follows:")
+</pre>
+<p>setStandardButton() function displays desired buttons.</p>
+<pre class="result notranslate">msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+</pre>
+<p>buttonClicked() signal is connected to a slot function, which identifies the caption of source of the signal.</p>
+<pre class="result notranslate">msg.buttonClicked.connect(msgbtn)
+</pre>
+<p>The complete code for the example is as follows −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   w </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QWidget</span><span class="pun">()</span><span class="pln">
+   b </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="pln">w</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Show message!"</span><span class="pun">)</span><span class="pln">
+   
+   b</span><span class="pun">.</span><span class="pln">move</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+   b</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">showdialog</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"PyQt MessageBox demo"</span><span class="pun">)</span><span class="pln">
+   w</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> showdialog</span><span class="pun">():</span><span class="pln">
+   msg </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMessageBox</span><span class="pun">()</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">setIcon</span><span class="pun">(</span><span class="typ">QMessageBox</span><span class="pun">.</span><span class="typ">Information</span><span class="pun">)</span><span class="pln">
+   
+   msg</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"This is a message box"</span><span class="pun">)</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">setInformativeText</span><span class="pun">(</span><span class="str">"This is additional information"</span><span class="pun">)</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"MessageBox demo"</span><span class="pun">)</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">setDetailedText</span><span class="pun">(</span><span class="str">"The details are as follows:"</span><span class="pun">)</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">setStandardButtons</span><span class="pun">(</span><span class="typ">QMessageBox</span><span class="pun">.</span><span class="typ">Ok</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">QMessageBox</span><span class="pun">.</span><span class="typ">Cancel</span><span class="pun">)</span><span class="pln">
+   msg</span><span class="pun">.</span><span class="pln">buttonClicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">msgbtn</span><span class="pun">)</span><span class="pln">
+
+   retval </span><span class="pun">=</span><span class="pln"> msg</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> msgbtn</span><span class="pun">(</span><span class="pln">i</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="str">"Button pressed is:"</span><span class="pun">,</span><span class="pln">i</span><span class="pun">.</span><span class="pln">text</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>The above code produces the following output. Message Box pops up when main windows’ button is clicked −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/qmessagebox_output.jpg" alt="QMessageBox Output">
+<p>If you click on Ok or Cancel button on MessageBox, the following output is produced on the console −</p>
+<pre class="result notranslate">Button pressed is: OK
+Button pressed is: Cancel
+</pre>
+<h1>PyQt5 - Multiple Document Interface</h1>
+<p>A typical GUI application may have multiple windows. Tabbed and 
+stacked widgets allow to activate one such window at a time. However, 
+many a times this approach may not be useful as view of other windows is
+ hidden.</p>
+<p>One way to display multiple windows simultaneously is to create them as independent windows. This is called as SDI <b>(single Document Interface)</b>. This requires more memory resources as each window may have its own menu system, toolbar, etc.</p>
+<p>MDI <b>(Multiple Document Interface)</b> applications consume lesser 
+memory resources. The sub windows are laid down inside main container 
+with relation to each other. The container widget is called <b>QMdiArea</b>.</p>
+<p>QMdiArea widget generally occupies the central widget of QMainWondow object. Child windows in this area are instances of <b>QMdiSubWindow</b>
+ class. It is possible to set any QWidget as the internal widget of 
+subWindow object. Sub-windows in the MDI area can be arranged in 
+cascaded or tile fashion.</p>
+<p>The following table lists important methods of QMdiArea class and QMdiSubWindow class −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>addSubWindow()</b></p>
+<p>Adds a widget as a new subwindow in MDI area</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>removeSubWindow()</b></p>
+<p>Removes a widget that is internal widget of a subwindow</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>setActiveSubWindow()</b></p>
+<p>Activates a subwindow</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>cascadeSubWindows()</b></p>
+<p>Arranges subwindows in MDiArea in a cascaded fashion</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>tileSubWindows()</b></p>
+<p>Arranges subwindows in MDiArea in a tiled fashion</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>closeActiveSubWindow()</b></p>
+<p>Closes the active subwindow</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>subWindowList()</b></p>
+<p>Returns the list of subwindows in MDI Area</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>setWidget()</b></p>
+<p>Sets a QWidget as an internal widget of a QMdiSubwindow instance</p></td>
+</tr>
+</tbody></table>
+<p>QMdiArea object emits subWindowActivated() signal whereas windowStateChanged() signal is emitted by QMdisubWindow object.</p>
+<h2>Example</h2>
+<p>In the following example, top level window comprising of QMainWindow has a menu and MdiArea.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMdiArea</span><span class="pun">()</span><span class="pln">
+</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setCentralWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">)</span><span class="pln">
+bar </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">menuBar</span><span class="pun">()</span><span class="pln">
+file </span><span class="pun">=</span><span class="pln"> bar</span><span class="pun">.</span><span class="pln">addMenu</span><span class="pun">(</span><span class="str">"File"</span><span class="pun">)</span><span class="pln">
+
+file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"New"</span><span class="pun">)</span><span class="pln">
+file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"cascade"</span><span class="pun">)</span><span class="pln">
+file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"Tiled"</span><span class="pun">)</span></pre>
+<p>Triggered() signal of the menu is connected to windowaction() function.</p>
+<pre class="result notranslate">file.triggered[QAction].connect(self.windowaction)
+</pre>
+<p>The new action of menu adds a subwindow in MDI area with a title having an incremental number to it.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count</span><span class="pun">+</span><span class="lit">1</span><span class="pln">
+</span><span class="kwd">sub</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMdiSubWindow</span><span class="pun">()</span><span class="pln">
+</span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">setWidget</span><span class="pun">(</span><span class="typ">QTextEdit</span><span class="pun">())</span><span class="pln">
+</span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"subwindow"</span><span class="pun">+</span><span class="pln">str</span><span class="pun">(</span><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count</span><span class="pun">))</span><span class="pln">
+</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">.</span><span class="pln">addSubWindow</span><span class="pun">(</span><span class="kwd">sub</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span></pre>
+<p>Cascaded and tiled buttons of the menu arrange currently displayed subwindows in cascaded and tiled fashion respectively.</p>
+<p>The complete code is as follows −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MainWindow</span><span class="pun">(</span><span class="typ">QMainWindow</span><span class="pun">):</span><span class="pln">
+   count </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> parent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="typ">MainWindow</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">(</span><span class="pln">parent</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMdiArea</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setCentralWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">)</span><span class="pln">
+      bar </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">menuBar</span><span class="pun">()</span><span class="pln">
+
+      file </span><span class="pun">=</span><span class="pln"> bar</span><span class="pun">.</span><span class="pln">addMenu</span><span class="pun">(</span><span class="str">"File"</span><span class="pun">)</span><span class="pln">
+      file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"New"</span><span class="pun">)</span><span class="pln">
+      file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"cascade"</span><span class="pun">)</span><span class="pln">
+      file</span><span class="pun">.</span><span class="pln">addAction</span><span class="pun">(</span><span class="str">"Tiled"</span><span class="pun">)</span><span class="pln">
+      file</span><span class="pun">.</span><span class="pln">triggered</span><span class="pun">[</span><span class="typ">QAction</span><span class="pun">].</span><span class="pln">connect</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">windowaction</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"MDI demo"</span><span class="pun">)</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> windowaction</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> q</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="str">"triggered"</span><span class="pun">)</span><span class="pln">
+   
+      </span><span class="kwd">if</span><span class="pln"> q</span><span class="pun">.</span><span class="pln">text</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">"New"</span><span class="pun">:</span><span class="pln">
+         </span><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count</span><span class="pun">+</span><span class="lit">1</span><span class="pln">
+         </span><span class="kwd">sub</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMdiSubWindow</span><span class="pun">()</span><span class="pln">
+         </span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">setWidget</span><span class="pun">(</span><span class="typ">QTextEdit</span><span class="pun">())</span><span class="pln">
+         </span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"subwindow"</span><span class="pun">+</span><span class="pln">str</span><span class="pun">(</span><span class="typ">MainWindow</span><span class="pun">.</span><span class="pln">count</span><span class="pun">))</span><span class="pln">
+         </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">.</span><span class="pln">addSubWindow</span><span class="pun">(</span><span class="kwd">sub</span><span class="pun">)</span><span class="pln">
+         </span><span class="kwd">sub</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+
+      </span><span class="kwd">if</span><span class="pln"> q</span><span class="pun">.</span><span class="pln">text</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">"cascade"</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">.</span><span class="pln">cascadeSubWindows</span><span class="pun">()</span><span class="pln">
+
+      </span><span class="kwd">if</span><span class="pln"> q</span><span class="pun">.</span><span class="pln">text</span><span class="pun">()</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="str">"Tiled"</span><span class="pun">:</span><span class="pln">
+         </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">mdi</span><span class="pun">.</span><span class="pln">tileSubWindows</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> main</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   ex </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MainWindow</span><span class="pun">()</span><span class="pln">
+   ex</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   main</span><span class="pun">()</span></pre>
+<p>Run above code and three windows in cascased and tiled formation −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/multiple_document_interface_output.jpg" alt="Multiple Document Interface Output1">
+<p></p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/multiple_document_interface_outputs.jpg" alt="Multiple Document Interface Output2">
+<p></p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/multiple_document_interface.jpg" alt="Multiple Document Interface Output3">
+<h1>PyQt5 - Drag and Drop</h1>
+<p>The provision of <b>drag and drop</b> is very intuitive for the user.
+ It is found in many desktop applications where the user can copy or 
+move objects from one window to another.</p>
+<p>MIME based drag and drop data transfer is based on <b>QDrag</b> class. <b>QMimeData</b>
+ objects associate the data with their corresponding MIME type. It is 
+stored on clipboard and then used in the drag and drop process.</p>
+<p>The following QMimeData class functions allow the MIME type to be detected and used conveniently.</p>
+<table class="table table-bordered" style="text-align:center;">
+<tbody><tr>
+<th style="text-align:center;">Tester</th>
+<th style="text-align:center;">Getter</th>
+<th style="text-align:center;">Setter</th>
+<th style="text-align:center;">MIME Types</th>
+</tr>
+<tr>
+<td>hasText()</td>
+<td>text()</td>
+<td>setText()</td>
+<td>text/plain</td>
+</tr>
+<tr>
+<td>hasHtml()</td>
+<td>html()</td>
+<td>setHtml()</td>
+<td>text/html</td>
+</tr>
+<tr>
+<td>hasUrls()</td>
+<td>urls()</td>
+<td>setUrls()</td>
+<td>text/uri-list</td>
+</tr>
+<tr>
+<td>hasImage()</td>
+<td>imageData()</td>
+<td>setImageData()</td>
+<td>image/ *</td>
+</tr>
+<tr>
+<td>hasColor()</td>
+<td>colorData()</td>
+<td>setColorData()</td>
+<td>application/x-color</td>
+</tr>
+</tbody></table>
+<p>Many QWidget objects support the drag and drop activity. Those that 
+allow their data to be dragged have setDragEnabled() which must be set 
+to true. On the other hand, the widgets should respond to the drag and 
+drop events in order to store the data dragged into them.</p>
+<ul class="list">
+<li><p><b>DragEnterEvent</b> provides an event which is sent to the target widget as dragging action enters it.</p></li>
+<li><p><b>DragMoveEvent</b> is used when the drag and drop action is in progress.</p></li>
+<li><p><b>DragLeaveEvent</b> is generated as the drag and drop action leaves the widget.</p></li>
+<li><p><b>DropEvent</b>, on the other hand, occurs when the drop is completed. The event’s proposed action can be accepted or rejected conditionally.</p></li>
+</ul>
+<h2>Example</h2>
+<p>In the following code, the <b>DragEnterEvent</b> verifies whether the
+ MIME data of the event contains text. If yes, the event’s proposed 
+action is accepted and the text is added as a new item in the ComboBox.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> combo</span><span class="pun">(</span><span class="typ">QComboBox</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> title</span><span class="pun">,</span><span class="pln"> parent</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="pln">combo</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">(</span><span class="pln"> parent</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setAcceptDrops</span><span class="pun">(</span><span class="kwd">True</span><span class="pun">)</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> dragEnterEvent</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> e</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="pln">e</span><span class="pun">)</span><span class="pln">
+
+      </span><span class="kwd">if</span><span class="pln"> e</span><span class="pun">.</span><span class="pln">mimeData</span><span class="pun">().</span><span class="pln">hasText</span><span class="pun">():</span><span class="pln">
+         e</span><span class="pun">.</span><span class="pln">accept</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+         e</span><span class="pun">.</span><span class="pln">ignore</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> dropEvent</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> e</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">addItem</span><span class="pun">(</span><span class="pln">e</span><span class="pun">.</span><span class="pln">mimeData</span><span class="pun">().</span><span class="pln">text</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">(</span><span class="typ">QWidget</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="typ">Example</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">()</span><span class="pln">
+
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">initUI</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> initUI</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      lo </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QFormLayout</span><span class="pun">()</span><span class="pln">
+      lo</span><span class="pun">.</span><span class="pln">addRow</span><span class="pun">(</span><span class="typ">QLabel</span><span class="pun">(</span><span class="str">"Type some text in textbox and drag it into combo box"</span><span class="pun">))</span><span class="pln">
+   
+      edit </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QLineEdit</span><span class="pun">()</span><span class="pln">
+      edit</span><span class="pun">.</span><span class="pln">setDragEnabled</span><span class="pun">(</span><span class="kwd">True</span><span class="pun">)</span><span class="pln">
+      com </span><span class="pun">=</span><span class="pln"> combo</span><span class="pun">(</span><span class="str">"Button"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">)</span><span class="pln">
+      lo</span><span class="pun">.</span><span class="pln">addRow</span><span class="pun">(</span><span class="pln">edit</span><span class="pun">,</span><span class="pln">com</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="pln">lo</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">'Simple drag and drop'</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> main</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   ex </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">()</span><span class="pln">
+   ex</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   main</span><span class="pun">()</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/drag_and_drop_output.jpg" alt="Drag and Drop Output">
+<h1>PyQt5 - Database Handling</h1>
+<p>PyQt5 library contains <b>QtSql</b> module. It is an elaborate class system to communicate with many SQL based databases. Its <b>QSqlDatabase</b> provides access through a Connection object. Following is the list of currently available SQL drivers −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%">Sr.No.</th>
+<th style="text-align:center;">Driver Type &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>QDB2</b></p>
+<p>IBM DB2</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>QIBASE</b></p>
+<p>Borland InterBase Driver</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>QMYSQL</b></p>
+<p>MySQL Driver</p>
+</td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>QOCI</b></p>
+<p>Oracle Call Interface Driver</p>
+</td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>QODBC</b></p>
+<p>ODBC Driver (includes Microsoft SQL Server)</p>
+</td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>QPSQL</b></p>
+<p>PostgreSQL Driver</p>
+</td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>QSQLITE</b></p>
+<p>SQLite version 3 or above</p>
+</td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>QSQLITE2</b></p>
+<p>SQLite version 2</p>
+</td>
+</tr>
+</tbody></table>
+<h2>Example</h2>
+<p>For this chapter, a connection with a SQLite database is established using the static method −</p>
+<pre class="result notranslate">db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+db.setDatabaseName('sports.db')
+</pre>
+<p>Other methods of QSqlDatabase class are as follows −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>setDatabaseName()</b></p>
+<p>Sets the name of the database with which connection is sought</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>setHostName()</b></p>
+<p>Sets the name of the host on which the database is installed</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>setUserName()</b></p>
+<p>Specifies the user name for connection</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>setPassword()</b></p>
+<p>Sets the connection object’s password if any</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>commit()</b></p>
+<p>Commits the transactions and returns true if successful</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>rollback()</b></p>
+<p>Rolls back the database transaction</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>close()</b></p>
+<p>Closes the connection</p></td>
+</tr>
+</tbody></table>
+<p><b>QSqlQuery</b> class has the functionality to execute and 
+manipulate SQL commands. Both DDL and DML type of SQL queries can be 
+executed. First step is to create SQlite database using the following 
+statements −</p>
+<pre class="result notranslate">db = QSqlDatabase.addDatabase('QSQLITE')
+db.setDatabaseName('sportsdatabase.db')
+</pre>
+<p>Next, obtain Query object with <b>QSqlQuery()</b> method and call its most important method exec_(), which takes as an argument a string containing SQL statement to be executed.</p>
+<pre class="result notranslate">query = QtSql.QSqlQuery()
+query.exec_("create table sportsmen(id int primary key, " "firstname varchar(20), lastname varchar(20))")
+</pre>
+<p>The following script creates a SQLite database sports.db with a table of sportsperson populated with five records.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtSql</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> createDB</span><span class="pun">():</span><span class="pln">
+   db </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QSqlDatabase</span><span class="pun">.</span><span class="pln">addDatabase</span><span class="pun">(</span><span class="str">'QSQLITE'</span><span class="pun">)</span><span class="pln">
+   db</span><span class="pun">.</span><span class="pln">setDatabaseName</span><span class="pun">(</span><span class="str">'sportsdatabase.db'</span><span class="pun">)</span><span class="pln">
+
+   </span><span class="kwd">if</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> db</span><span class="pun">.</span><span class="pln">open</span><span class="pun">():</span><span class="pln">
+      msg </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QMessageBox</span><span class="pun">()</span><span class="pln">
+      msg</span><span class="pun">.</span><span class="pln">setIcon</span><span class="pun">(</span><span class="typ">QMessageBox</span><span class="pun">.</span><span class="typ">Critical</span><span class="pun">)</span><span class="pln">
+      msg</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Error in Database Creation"</span><span class="pun">)</span><span class="pln">
+      retval </span><span class="pun">=</span><span class="pln"> msg</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">False</span><span class="pln">
+   query </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QSqlQuery</span><span class="pun">()</span><span class="pln">
+
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"create table sportsmen(
+      id int primary key, ""firstname varchar(20), lastname varchar(20))"</span><span class="pun">)</span><span class="pln">
+
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"insert into sportsmen values(101, 'Roger', 'Federer')"</span><span class="pun">)</span><span class="pln">
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"insert into sportsmen values(102, 'Christiano', 'Ronaldo')"</span><span class="pun">)</span><span class="pln">
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"insert into sportsmen values(103, 'Ussain', 'Bolt')"</span><span class="pun">)</span><span class="pln">
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"insert into sportsmen values(104, 'Sachin', 'Tendulkar')"</span><span class="pun">)</span><span class="pln">
+   query</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">(</span><span class="str">"insert into sportsmen values(105, 'Saina', 'Nehwal')"</span><span class="pun">)</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">True</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   createDB</span><span class="pun">()</span></pre>
+<p>To confirm that the SQLite database is created with above records 
+added in sportsmen table in it, use a SQLite Gui utility called <b>SQLiteStudio</b>.</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/database_handling.jpg" alt="Database Handling">
+<p><b>QSqlTableModel</b> class in PyQt is a high-level interface that 
+provides editable data model for reading and writing records in a single
+ table. This model is used to populate a <b>QTableView</b> object. It presents to the user a scrollable and editable view that can be put on any top level window.</p>
+<p>A QSqlTableModel object is declared in the following manner −</p>
+<pre class="result notranslate">model = QtSql.QSqlTableModel()
+</pre>
+<p>Its editing strategy can be set to any of the following −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th class="ts">QSqlTableModel.OnFieldChange</th>
+<td>All changes will be applied immediately</td>
+</tr>
+<tr>
+<th class="ts">QSqlTableModel.OnRowChange</th>
+<td>Changes will be applied when the user selects a different row</td>
+</tr>
+<tr>
+<th class="ts">QSqlTableModel.OnManualSubmit</th>
+<td>All changes will be cached until either submitAll() or revertAll() is called</td>
+</tr>
+</tbody></table>
+<h2>Example</h2>
+<p>In the following example, sportsperson table is used as a model and the strategy is set as −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="pln">model</span><span class="pun">.</span><span class="pln">setTable</span><span class="pun">(</span><span class="str">'sportsmen'</span><span class="pun">)</span><span class="pln"> 
+model</span><span class="pun">.</span><span class="pln">setEditStrategy</span><span class="pun">(</span><span class="typ">QtSql</span><span class="pun">.</span><span class="typ">QSqlTableModel</span><span class="pun">.</span><span class="typ">OnFieldChange</span><span class="pun">)</span><span class="pln">
+   model</span><span class="pun">.</span><span class="kwd">select</span><span class="pun">()</span></pre>
+<p>QTableView class is part of Model/View framework in PyQt. The QTableView object is created as follows −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="pln">view </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QtGui</span><span class="pun">.</span><span class="typ">QTableView</span><span class="pun">()</span><span class="pln">
+view</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="pln">model</span><span class="pun">)</span><span class="pln">
+view</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="pln">title</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">return</span><span class="pln"> view</span></pre>
+<p>This QTableView object and two QPushButton widgets are added to the 
+top level QDialog window. Clicked() signal of add button is connected to
+ addrow() which performs insertRow() on the model table.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="pln">button</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">addrow</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">def</span><span class="pln"> addrow</span><span class="pun">():</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> model</span><span class="pun">.</span><span class="pln">rowCount</span><span class="pun">()</span><span class="pln">
+   ret </span><span class="pun">=</span><span class="pln"> model</span><span class="pun">.</span><span class="pln">insertRows</span><span class="pun">(</span><span class="pln">model</span><span class="pun">.</span><span class="pln">rowCount</span><span class="pun">(),</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> ret</span></pre>
+<p>The Slot associated with the delete button executes a lambda function that deletes a row, which is selected by the user.</p>
+<pre class="result notranslate">btn1.clicked.connect(lambda: model.removeRow(view1.currentIndex().row()))
+</pre>
+<p>The complete code is as follows −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtSql</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> initializeModel</span><span class="pun">(</span><span class="pln">model</span><span class="pun">):</span><span class="pln">
+   model</span><span class="pun">.</span><span class="pln">setTable</span><span class="pun">(</span><span class="str">'sportsmen'</span><span class="pun">)</span><span class="pln">
+   model</span><span class="pun">.</span><span class="pln">setEditStrategy</span><span class="pun">(</span><span class="typ">QSqlTableModel</span><span class="pun">.</span><span class="typ">OnFieldChange</span><span class="pun">)</span><span class="pln">
+   model</span><span class="pun">.</span><span class="kwd">select</span><span class="pun">()</span><span class="pln">
+   model</span><span class="pun">.</span><span class="pln">setHeaderData</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Qt</span><span class="pun">.</span><span class="typ">Horizontal</span><span class="pun">,</span><span class="pln"> </span><span class="str">"ID"</span><span class="pun">)</span><span class="pln">
+   model</span><span class="pun">.</span><span class="pln">setHeaderData</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Qt</span><span class="pun">.</span><span class="typ">Horizontal</span><span class="pun">,</span><span class="pln"> </span><span class="str">"First name"</span><span class="pun">)</span><span class="pln">
+   model</span><span class="pun">.</span><span class="pln">setHeaderData</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Qt</span><span class="pun">.</span><span class="typ">Horizontal</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Last name"</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> createView</span><span class="pun">(</span><span class="pln">title</span><span class="pun">,</span><span class="pln"> model</span><span class="pun">):</span><span class="pln">
+   view </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QTableView</span><span class="pun">()</span><span class="pln">
+   view</span><span class="pun">.</span><span class="pln">setModel</span><span class="pun">(</span><span class="pln">model</span><span class="pun">)</span><span class="pln">
+   view</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="pln">title</span><span class="pun">)</span><span class="pln">
+   </span><span class="kwd">return</span><span class="pln"> view
+
+</span><span class="kwd">def</span><span class="pln"> addrow</span><span class="pun">():</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="pln">model</span><span class="pun">.</span><span class="pln">rowCount</span><span class="pun">())</span><span class="pln">
+   ret </span><span class="pun">=</span><span class="pln"> model</span><span class="pun">.</span><span class="pln">insertRows</span><span class="pun">(</span><span class="pln">model</span><span class="pun">.</span><span class="pln">rowCount</span><span class="pun">(),</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+   </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ret</span><span class="pun">)</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> findrow</span><span class="pun">(</span><span class="pln">i</span><span class="pun">):</span><span class="pln">
+   delrow </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">row</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   db </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QSqlDatabase</span><span class="pun">.</span><span class="pln">addDatabase</span><span class="pun">(</span><span class="str">'QSQLITE'</span><span class="pun">)</span><span class="pln">
+   db</span><span class="pun">.</span><span class="pln">setDatabaseName</span><span class="pun">(</span><span class="str">'sportsdatabase.db'</span><span class="pun">)</span><span class="pln">
+   model </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QSqlTableModel</span><span class="pun">()</span><span class="pln">
+   delrow </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pln">
+   initializeModel</span><span class="pun">(</span><span class="pln">model</span><span class="pun">)</span><span class="pln">
+
+   view1 </span><span class="pun">=</span><span class="pln"> createView</span><span class="pun">(</span><span class="str">"Table Model (View 1)"</span><span class="pun">,</span><span class="pln"> model</span><span class="pun">)</span><span class="pln">
+   view1</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">findrow</span><span class="pun">)</span><span class="pln">
+
+   dlg </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QDialog</span><span class="pun">()</span><span class="pln">
+   layout </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QVBoxLayout</span><span class="pun">()</span><span class="pln">
+   layout</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="pln">view1</span><span class="pun">)</span><span class="pln">
+
+   button </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="str">"Add a row"</span><span class="pun">)</span><span class="pln">
+   button</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="pln">addrow</span><span class="pun">)</span><span class="pln">
+   layout</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="pln">button</span><span class="pun">)</span><span class="pln">
+
+   btn1 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPushButton</span><span class="pun">(</span><span class="str">"del a row"</span><span class="pun">)</span><span class="pln">
+   btn1</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="kwd">lambda</span><span class="pun">:</span><span class="pln"> model</span><span class="pun">.</span><span class="pln">removeRow</span><span class="pun">(</span><span class="pln">view1</span><span class="pun">.</span><span class="pln">currentIndex</span><span class="pun">().</span><span class="pln">row</span><span class="pun">()))</span><span class="pln">
+   layout</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="pln">btn1</span><span class="pun">)</span><span class="pln">
+
+   dlg</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="pln">layout</span><span class="pun">)</span><span class="pln">
+   dlg</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"Database Demo"</span><span class="pun">)</span><span class="pln">
+   dlg</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/database_handling_output.jpg" alt="Database Handling Output">
+<p>Try adding and deleting a few records and go back to SQLiteStudio to confirm the transactions.</p>
+<h1>PyQt5 - Drawing API</h1>
+<p>All the <b>QWidget</b> classes in PyQt are sub classed from QPaintDevice class. A <b>QPaintDevice</b>
+ is an abstraction of two dimensional space that can be drawn upon using
+ a QPainter. Dimensions of paint device are measured in pixels starting 
+from the top-left corner.</p>
+<p><b>QPainter</b> class performs low level painting on widgets and 
+other paintable devices such as printer. Normally, it is used in 
+widget’s paint event. The <b>QPaintEvent</b> occurs whenever the widget’s appearance is updated.</p>
+<p>The painter is activated by calling the <b>begin()</b> method, while the <b>end()</b> method deactivates it. In between, the desired pattern is painted by suitable methods as listed in the following table.</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>begin()</b></p>
+<p>Starts painting on the target device</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>drawArc()</b></p>
+<p>Draws an arc between the starting and the end angle</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>drawEllipse()</b></p>
+<p>Draws an ellipse inside a rectangle</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>drawLine()</b></p>
+<p>Draws a line with endpoint coordinates specified</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>drawPixmap()</b></p>
+<p>Extracts pixmap from the image file and displays it at the specified position</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>drwaPolygon()</b></p>
+<p>Draws a polygon using an array of coordinates</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>drawRect()</b></p>
+<p>Draws a rectangle starting at the top-left coordinate with the given width and height</p></td>
+</tr>
+<tr>
+<td class="ts">8</td>
+<td>
+<p><b>drawText()</b></p>
+<p>Displays the text at given coordinates</p></td>
+</tr>
+<tr>
+<td class="ts">9</td>
+<td>
+<p><b>fillRect()</b></p>
+<p>Fills the rectangle with the QColor parameter</p></td>
+</tr>
+<tr>
+<td class="ts">10</td>
+<td>
+<p><b>setBrush()</b></p>
+<p>Sets a brush style for painting</p></td>
+</tr>
+<tr>
+<td class="ts">11</td>
+<td>
+<p><b>setPen()</b></p>
+<p>Sets the color, size and style of pen to be used for drawing</p></td>
+</tr>
+</tbody></table>
+<h2>Example</h2>
+<p>In the following code, various methods of PyQt's drawing methods are used.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">(</span><span class="typ">QWidget</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="typ">Example</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">initUI</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> initUI</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">text </span><span class="pun">=</span><span class="pln"> </span><span class="str">"hello world"</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setGeometry</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="pln"> </span><span class="lit">400</span><span class="pun">,</span><span class="lit">300</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">'Draw Demo'</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> paintEvent</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">event</span><span class="pun">):</span><span class="pln">
+      qp </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QPainter</span><span class="pun">()</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">)</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">setPen</span><span class="pun">(</span><span class="typ">QColor</span><span class="pun">(</span><span class="typ">Qt</span><span class="pun">.</span><span class="pln">red</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">setFont</span><span class="pun">(</span><span class="typ">QFont</span><span class="pun">(</span><span class="str">'Arial'</span><span class="pun">,</span><span class="pln"> </span><span class="lit">20</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">drawText</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> </span><span class="str">"hello Python"</span><span class="pun">)</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">setPen</span><span class="pun">(</span><span class="typ">QColor</span><span class="pun">(</span><span class="typ">Qt</span><span class="pun">.</span><span class="pln">blue</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">drawLine</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="lit">100</span><span class="pun">)</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">drawRect</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="lit">150</span><span class="pun">,</span><span class="lit">150</span><span class="pun">,</span><span class="lit">100</span><span class="pun">)</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">setPen</span><span class="pun">(</span><span class="typ">QColor</span><span class="pun">(</span><span class="typ">Qt</span><span class="pun">.</span><span class="pln">yellow</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">drawEllipse</span><span class="pun">(</span><span class="lit">100</span><span class="pun">,</span><span class="lit">50</span><span class="pun">,</span><span class="lit">100</span><span class="pun">,</span><span class="lit">50</span><span class="pun">)</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">drawPixmap</span><span class="pun">(</span><span class="lit">220</span><span class="pun">,</span><span class="lit">10</span><span class="pun">,</span><span class="typ">QPixmap</span><span class="pun">(</span><span class="str">"pythonlogo.png"</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="pln">fillRect</span><span class="pun">(</span><span class="lit">20</span><span class="pun">,</span><span class="lit">175</span><span class="pun">,</span><span class="lit">130</span><span class="pun">,</span><span class="lit">70</span><span class="pun">,</span><span class="typ">QBrush</span><span class="pun">(</span><span class="typ">Qt</span><span class="pun">.</span><span class="typ">SolidPattern</span><span class="pun">))</span><span class="pln">
+      qp</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">()</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> main</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   ex </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   main</span><span class="pun">()</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/database_handling_outputs.jpg" alt="Database Handling Outputs">
+<h1>PyQt5 - BrushStyle Constants</h1>
+<p>In this chapter, we shall learn Brush Style Constants.</p>
+<h2>Brush Style Constants</h2>
+<p>Given below are the Brush Style Constants −</p>
+<table class="table table-bordered" style="text-align:center;">
+<tbody><tr>
+<td>Qt.NoBrush</td>
+<td>No brush pattern</td>
+</tr>
+<tr>
+<td>Qt.SolidPattern</td>
+<td>Uniform color</td>
+</tr>
+<tr>
+<td>Qt.Dense1Pattern</td>
+<td>Extremely dense brush pattern</td>
+</tr>
+<tr>
+<td>Qt.HorPattern</td>
+<td>Horizontal lines</td>
+</tr>
+<tr>
+<td>Qt.VerPattern</td>
+<td>Vertical lines</td>
+</tr>
+<tr>
+<td>Qt.CrossPattern</td>
+<td>Crossing horizontal and vertical lines</td>
+</tr>
+<tr>
+<td>Qt.BDiagPattern</td>
+<td>Backward diagonal lines</td>
+</tr>
+<tr>
+<td>Qt.FDiagPattern</td>
+<td>Forward diagonal lines</td>
+</tr>
+<tr>
+<td>Qt.DiagCrossPattern</td>
+<td>Crossing diagonal lines</td>
+</tr>
+</tbody></table>
+<h2>Predefined QColor Styles</h2>
+<p>Given below are the Predefined QColor Styles −</p>
+<table class="table table-bordered" style="text-align:center;">
+<tbody><tr>
+<td>Qt.NoBrush</td>
+<td>No brush pattern</td>
+</tr>
+<tr>
+<td>Qt.SolidPattern</td>
+<td>Uniform color</td>
+</tr>
+<tr>
+<td>Qt.Dense1Pattern</td>
+<td>Extremely dense brush pattern</td>
+</tr>
+<tr>
+<td>Qt.HorPattern</td>
+<td>Horizontal lines</td>
+</tr>
+<tr>
+<td>Qt.VerPattern</td>
+<td>Vertical lines</td>
+</tr>
+<tr>
+<td>Qt.CrossPattern</td>
+<td>Crossing horizontal and vertical lines</td>
+</tr>
+<tr>
+<td>Qt.BDiagPattern</td>
+<td>Backward diagonal lines</td>
+</tr>
+<tr>
+<td>Qt.FDiagPattern</td>
+<td>Forward diagonal lines</td>
+</tr>
+<tr>
+<td>Qt.DiagCrossPattern</td>
+<td>Crossing diagonal lines</td>
+</tr>
+</tbody></table>
+<h2>Predefined QColor Objects</h2>
+<p>Given below are the Predefined QColor Objects −</p>
+<table style="width:25%" class="table table-bordered" align="center">
+<tbody><tr>
+<td>Qt.white</td>
+</tr>
+<tr>
+<td>Qt.black</td>
+</tr>
+<tr>
+<td>Qt.red</td>
+</tr>
+<tr>
+<td>Qt.darkRed</td>
+</tr>
+<tr>
+<td>Qt.green</td>
+</tr>
+<tr>
+<td>Qt.darkGreen</td>
+</tr>
+<tr>
+<td>Qt.blue</td>
+</tr>
+<tr>
+<td>Qt.cyan</td>
+</tr>
+<tr>
+<td>Qt.magenta</td>
+</tr>
+<tr>
+<td>Qt.yellow</td>
+</tr>
+<tr>
+<td>Qt.darkYellow</td>
+</tr>
+<tr>
+<td>Qt.gray</td>
+</tr>
+</tbody></table>
+<h1>PyQt5 - QClipboard</h1>
+<p>The <b>QClipboard</b> class provides access to system-wide clipboard 
+that offers a simple mechanism to copy and paste data between 
+applications. Its action is similar to <b>QDrag</b> class and uses similar data types.</p>
+<p>QApplication class has a static method <b>clipboard()</b> which returns reference to clipboard object. Any type of MimeData can be copied to or pasted from the clipboard.</p>
+<p>Following are the clipboard class methods that are commonly used −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>clear()</b></p>
+<p>Clears clipboard contents</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>setImage()</b></p>
+<p>Copies QImage into clipboard</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>setMimeData()</b></p>
+<p>Sets MIME data into clipboard</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>setPixmap()</b></p>
+<p>Copies Pixmap object in clipboard</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>setText()</b></p>
+<p>Copies QString in clipboard</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>text()</b></p>
+<p>Retrieves text from clipboard</p></td>
+</tr>
+</tbody></table>
+<p>Signal associated with clipboard object is −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%;">Sr.No.</th>
+<th style="text-align:center;">Method &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>dataChanged()</b></p>
+<p>Whenever clipboard data changes</p></td>
+</tr>
+</tbody></table>
+<h2>Example</h2>
+<p>In the following example, two TextEdit objects and two Pushbuttons are added to a top level window.</p>
+<p>To begin with the clipboard object is instantiated. Copy() method of 
+textedit object copies the data onto the system clipboard. When the 
+Paste button is clicked, it fetches the clipboard data and pastes it in 
+other textedit object.</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">(</span><span class="typ">QWidget</span><span class="pun">):</span><span class="pln">
+   </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">super</span><span class="pun">(</span><span class="typ">Example</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">).</span><span class="pln">__init__</span><span class="pun">()</span><span class="pln">
+
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">initUI</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> initUI</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      hbox </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QVBoxLayout</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit1</span><span class="pun">=</span><span class="typ">QTextEdit</span><span class="pun">()</span><span class="pln">
+      hbox</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit1</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn1</span><span class="pun">=</span><span class="typ">QPushButton</span><span class="pun">(</span><span class="str">"Copy"</span><span class="pun">)</span><span class="pln">
+      hbox</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn1</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit2</span><span class="pun">=</span><span class="typ">QTextEdit</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn2</span><span class="pun">=</span><span class="typ">QPushButton</span><span class="pun">(</span><span class="str">"Paste"</span><span class="pun">)</span><span class="pln">
+      hbox</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit2</span><span class="pun">)</span><span class="pln">
+      hbox</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn2</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn1</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">copytext</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">btn2</span><span class="pun">.</span><span class="pln">clicked</span><span class="pun">.</span><span class="pln">connect</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">pastetext</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="pln">hbox</span><span class="pun">)</span><span class="pln">
+      
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setGeometry</span><span class="pun">(</span><span class="lit">300</span><span class="pun">,</span><span class="pln"> </span><span class="lit">300</span><span class="pun">,</span><span class="pln"> </span><span class="lit">300</span><span class="pun">,</span><span class="pln"> </span><span class="lit">200</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">'Clipboard'</span><span class="pun">)</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+      
+   </span><span class="kwd">def</span><span class="pln"> copytext</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+
+      </span><span class="com">#clipboard.setText(self.edit1.copy())</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit1</span><span class="pun">.</span><span class="pln">copy</span><span class="pun">()</span><span class="pln">
+      </span><span class="kwd">print</span><span class="pln"> </span><span class="pun">(</span><span class="pln">clipboard</span><span class="pun">.</span><span class="pln">text</span><span class="pun">())</span><span class="pln">
+
+      msg</span><span class="pun">=</span><span class="typ">QMessageBox</span><span class="pun">()</span><span class="pln">
+      msg</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">clipboard</span><span class="pun">.</span><span class="pln">text</span><span class="pun">()+</span><span class="str">" copied on clipboard"</span><span class="pun">)</span><span class="pln">
+      msg</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">()</span><span class="pln">
+
+   </span><span class="kwd">def</span><span class="pln"> pastetext</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">):</span><span class="pln">
+      </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">edit2</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">clipboard</span><span class="pun">.</span><span class="pln">text</span><span class="pun">())</span><span class="pln">
+
+app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+clipboard</span><span class="pun">=</span><span class="pln">app</span><span class="pun">.</span><span class="pln">clipboard</span><span class="pun">()</span><span class="pln">
+ex </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Example</span><span class="pun">()</span><span class="pln">
+ex</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"clipboard Example"</span><span class="pun">)</span><span class="pln">
+sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/qclipboard.jpg" alt="QClipboard">
+<h1>PyQt5 - QPixmap Class</h1>
+<p><b>QPixmap</b> class provides an off-screen representation of an 
+image. It can be used as a QPaintDevice object or can be loaded into 
+another widget, typically a label or button.</p>
+<p>Qt API has another similar class <b>QImage</b>, which is optimized 
+for I/O and other pixel manipulations. Pixmap, on the other hand, is 
+optimized for showing it on screen. Both formats are interconvertible.</p>
+<p>The types of image files that can be read into a QPixmap object are as follows −</p>
+<table class="table table-bordered" style="text-align:center;">
+<tbody><tr>
+<td>BMP</td>
+<td>Windows Bitmap</td>
+</tr>
+<tr>
+<td>GIF</td>
+<td>Graphic Interchange Format (optional)</td>
+</tr>
+<tr>
+<td>JPG</td>
+<td>Joint Photographic Experts Group</td>
+</tr>
+<tr>
+<td>JPEG</td>
+<td>Joint Photographic Experts Group</td>
+</tr>
+<tr>
+<td>PNG</td>
+<td>Portable Network Graphics</td>
+</tr>
+<tr>
+<td>PBM</td>
+<td>Portable Bitmap</td>
+</tr>
+<tr>
+<td>PGM</td>
+<td>Portable Graymap</td>
+</tr>
+<tr>
+<td>PPM</td>
+<td>Portable Pixmap</td>
+</tr>
+<tr>
+<td>XBM</td>
+<td>X11 Bitmap</td>
+</tr>
+<tr>
+<td>XPM</td>
+<td>X11 Pixmap</td>
+</tr>
+</tbody></table>
+<p>Following methods are useful in handling QPixmap object −</p>
+<table class="table table-bordered">
+<tbody><tr>
+<th style="text-align:center;width:10%;">Sr.No.</th>
+<th style="text-align:center;">Methods &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>copy()</b></p>
+<p>Copies pixmap data from a QRect object</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>fromImage()</b></p>
+<p>Converts QImage object into QPixmap</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>grabWidget()</b></p>
+<p>Creates a pixmap from the given widget</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td>
+<p><b>grabWindow()</b></p>
+<p>Create pixmap of data in a window</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td>
+<p><b>Load()</b></p>
+<p>Loads an image file as pixmap</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td>
+<p><b>save()</b></p>
+<p>Saves the QPixmap object as a file</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td>
+<p><b>toImage</b></p>
+<p>Converts a QPixmap to QImage</p></td>
+</tr>
+</tbody></table>
+<p>The most common use of QPixmap is to display image on a label/button.</p>
+<h2>Example</h2>
+<p>The following example shows an image displayed on a QLabel by using the <b>setPixmap()</b> method.</p>
+<p>The complete code is as follows −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> sys
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtCore</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtGui</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">from</span><span class="pln"> </span><span class="typ">PyQt5</span><span class="pun">.</span><span class="typ">QtWidgets</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+
+</span><span class="kwd">def</span><span class="pln"> window</span><span class="pun">():</span><span class="pln">
+   app </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QApplication</span><span class="pun">(</span><span class="pln">sys</span><span class="pun">.</span><span class="pln">argv</span><span class="pun">)</span><span class="pln">
+   win </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QWidget</span><span class="pun">()</span><span class="pln">
+   l1 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QLabel</span><span class="pun">()</span><span class="pln">
+   l1</span><span class="pun">.</span><span class="pln">setPixmap</span><span class="pun">(</span><span class="typ">QPixmap</span><span class="pun">(</span><span class="str">"python.png"</span><span class="pun">))</span><span class="pln">
+
+   vbox </span><span class="pun">=</span><span class="pln"> </span><span class="typ">QVBoxLayout</span><span class="pun">()</span><span class="pln">
+   vbox</span><span class="pun">.</span><span class="pln">addWidget</span><span class="pun">(</span><span class="pln">l1</span><span class="pun">)</span><span class="pln">
+   win</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="pln">vbox</span><span class="pun">)</span><span class="pln">
+   win</span><span class="pun">.</span><span class="pln">setWindowTitle</span><span class="pun">(</span><span class="str">"QPixmap Demo"</span><span class="pun">)</span><span class="pln">
+   win</span><span class="pun">.</span><span class="pln">show</span><span class="pun">()</span><span class="pln">
+   sys</span><span class="pun">.</span><span class="kwd">exit</span><span class="pun">(</span><span class="pln">app</span><span class="pun">.</span><span class="pln">exec_</span><span class="pun">())</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> __name__ </span><span class="pun">==</span><span class="pln"> </span><span class="str">'__main__'</span><span class="pun">:</span><span class="pln">
+   window</span><span class="pun">()</span></pre>
+<p>The above code produces the following output −</p>
+<img src="PyQt5%20-%20Quick%20Guide_fichiers/qpixmap_class.jpg" alt="QPixmap Class">
+<div id="load">
+	<div class="mui-col-md-12 mui-col-sm-12 np">
+		<div class="row uk-min-height" id="ebooks_grid">
+			
+
+			<div class="clear"></div>
+			
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/pyqt5/pyqt5_qpixmap_class.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/pyqt5/pyqt5_useful_resources.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:20px;"></div>
+<div class="google-bottom-ads" id="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="adp_bottom_ads"></div>
+<script>
+var adPos = document.getElementById('adp_bottom_ads');
+var mobile_ad_id = "a8a632a6-046e-4f5c-b25f-8bc82ac89fb2";
+var desktop_ad_id = "e7ddd6f7-1ab0-494a-bade-887daa4373a0";
+desktop_ad_id = "4951d1d6-24d4-4a31-afb7-2c22c489eae1";
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+adpushup.triggerAd(ad_id);
+});
+</script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads" id="chapter-menu" style="display: none;">
+<!--
+<input type="hidden" id="vu" name="vu" value=""/>
+-->
+<div class="space-top"></div>
+<div class="mui-panel">
+<ul class="paid-menu" id="div-right-menu">
+<li><a class="hide-on-mobile" href="javascript:printPage();" title="Print this page"><i class="fa fa-print"></i> Print</a></li>
+<li><a href="javascript:void(0)" class="add_notes" title="Add Custom Notes" onclick="add_notes();"><i class="fa fa-edit"></i>&nbsp;Add Notes</a></li>
+<li><a href="javascript:void(0)" class="clsPage text-bookmark" id="text-bookmark" title="Add Bookmark" onclick="text_bookmark()"><i class="fal fa-bookmark"></i>&nbsp;Bookmark this page </a></li>
+<li><a href="javascript:void(0);" id="report_error_popup" onclick="report_error_popup();" title="Report Error"><i class="fal fa-bell"></i>&nbsp;Report Error</a></li>
+<li><a href="javascript:void(0);" id="suggestion_popup" title="Give Suggestions" onclick="suggestion_popup();"><i class="fal fa-badge-check"></i>&nbsp;Suggestions</a></li>
+</ul>
+<br>
+<div class="error_msg display_msg" style="color:red;text-align:left;"></div>
+<div class="success_msg display_msg" style="color:green;text-align:left;"></div>
+<div class="profile-my-notes" id="text_notes_div" style="display:none;">
+<textarea rows="10" class="text_notes" id="text_notes" name="text_notes" placeholder="Enter your custom notes..."></textarea>
+<br>
+<a href="javascript:void(0);" id="submit_text_notes" class="butn-save" onclick="submit_text_notes();"> Save</a>
+<a href="javascript:void(0);" class="pop-no butn-cancel" onclick="notesClose();"> Close</a>
+<p class="notes_msg"></p>
+</div>
+<div class="bottom-menu">
+<div class="tp-btn" style="width: auto;"><i class="fal fa-box-up"></i> <a href="https://www.tutorialspoint.com/market/student/dashboard.jsp">Dashboard</a></div>
+<div class="tp-btn" style="width: auto;" id="btnLogout"><i class="fal fa-sign-out-alt"></i><a href="javascript:void(0)">Logout</a></div>
+</div>
+</div>
+</div>
+<div class="mui-col-md-2 google-right-ads" id="google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" style="margin: 0px auto !important;margin-top:5px;min-height:250px!important">
+<div id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" class="_ap_apex_ad">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+   });
+}
+</script>
+</div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;min-height:250px!important">
+<div id="5c0affd5-724a-475c-bfcd-cecbc7660c36" class="_ap_apex_ad">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("5c0affd5-724a-475c-bfcd-cecbc7660c36");
+   });
+}
+</script>
+</div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;margin-bottom:15px;min-height:600px!important">
+<div id="8f8814c2-d64c-4d26-9cb9-543653c0b48f" class="_ap_apex_ad">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("8f8814c2-d64c-4d26-9cb9-543653c0b48f");
+   });
+}
+</script>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"><img class="img-responsive" src="PyQt5%20-%20Quick%20Guide_fichiers/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/return_refund_policy.htm"> <i class="fal fa-asterisk"></i> Refund Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">© Copyright 2021. All Rights Reserved.</div>
+</div>
+<div id="privacy-banner" style="display: none;">
+  <div>
+    <p>
+      We make use of cookies to improve our user experience. By using this website, you agree with our Cookies Policy.
+      <a id="banner-accept" href="javascript:void(0)">Agree</a>
+      <a id="banner-learn" href="https://www.tutorialspoint.com/about/about_cookies.htm" target="_blank">Learn more</a>
+    </p>
+  </div>
+</div>
+<script async="" src="PyQt5%20-%20Quick%20Guide_fichiers/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+<script src="PyQt5%20-%20Quick%20Guide_fichiers/text_menu.js"></script>
+<script>
+$(document).ready(function (){
+    var cval = readCookie('subscription_purchased');
+    if(cval == '1'){
+          // logged in and purchased subscription.
+          $('#google-right-ads').remove();
+          $('#adp1').remove();
+          $('#adp2').remove();
+          $('#stickyparent').remove();
+          $('#google-top-ads').remove();
+          $('#adp_top_ads').remove();
+          $('#google-bottom-ads').remove();
+          $('.tutorial-content hr').remove();
+          $('.login').remove();
+          $('#chapter-menu').show();
+          $('.content h1').css("border-bottom", "none");
+          $('.google-right-ads').css("padding-right", "0px");
+          $('.tutorial-content').css("border-radius", "10px");
+          $('#chapter-menu .mui-panel').css("border-radius", "10px");
+     }
+     $(document).on("click", "#btnLogout", function(){
+       $.ajax({
+           type: 'GET',
+           dataType: 'JSON',
+           cache: false,
+           url: "https://www.tutorialspoint.com/market/logout.jsp",
+           complete: function (xhr, statusText) {
+               if(xhr.status == 200) {
+                   window.location.href = 'https://www.tutorialspoint.com/index.htm'
+               } else {
+                   console.log("something went wrong");
+               }
+           }
+       });
+    });
+});
+</script>
+</footer>
+
+
+</body></html>
